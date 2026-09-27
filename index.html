@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio de Facundo Knight – Analista de Datos Jr. SQL, Python y Power BI.">
+<meta property="og:title" content="Portfolio – Facu Knight">
+<meta property="og:description" content="Analista de Datos Jr. | SQL · Python · Power BI | Estudiante de IA y Ciencia de Datos (UADE)">
+<meta property="og:type" content="website">
+<title>Portfolio Facu Knight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --ink:#16202E; --muted:#5A6576; --line:#DDE3EA;
+  --accent:#1F5AA6; --accent-soft:#E6EEF8; --hot:#D9682B; --hot-soft:#FBEDE3; --bar:#C4CDD8;
+  --code-bg:#F0F3F7;
+  --display:"Sora", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F141B; --surface:#161D27; --ink:#E7ECF2; --muted:#98A3B3; --line:#263140;
+    --accent:#7FB0F0; --accent-soft:#1A2A40; --hot:#F0A06A; --hot-soft:#33251C; --bar:#3A4656;
+    --code-bg:#111821; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F141B; --surface:#161D27; --ink:#E7ECF2; --muted:#98A3B3; --line:#263140;
+  --accent:#7FB0F0; --accent-soft:#1A2A40; --hot:#F0A06A; --hot-soft:#33251C; --bar:#3A4656;
+  --code-bg:#111821; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:56px 40px;display:flex;flex-direction:column;gap:64px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:18px}
+.hero h1{font-size:clamp(34px,6vw,52px);font-weight:700;letter-spacing:-.02em}
+.roles{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.4vw,20px);color:var(--accent);margin:0}
+.lead{max-width:62ch;color:var(--muted);margin:0;font-size:18px}
+.contact{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:15px;color:var(--ink);text-decoration:none}
+a.pill:hover{border-color:var(--accent)}
+.copy{font:inherit;font-size:13px;cursor:pointer;border:0;background:var(--accent-soft);color:var(--accent);padding:2px 9px;border-radius:999px}
+
+/* Sections */
+section{display:flex;flex-direction:column;gap:22px}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head h2{font-size:28px;font-weight:600}
+
+/* Experience case */
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:24px}
+.case-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:baseline}
+.case-top h3{font-size:22px;font-weight:600}
+.case-org{margin:4px 0 0;color:var(--muted)}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+.case p{margin:0}
+.block{display:flex;flex-direction:column;gap:10px}
+.block h4{margin:0;font-family:var(--display);font-size:15px;font-weight:600;color:var(--accent)}
+ul.clean{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.stat{background:var(--bg);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.stat b{font-family:var(--display);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat.hot b{color:var(--hot)}
+.stat span{font-size:15px;color:var(--muted);line-height:1.4}
+.chart{background:var(--bg);border-radius:10px;padding:18px 18px 12px}
+.chart-title{font-size:15px;color:var(--muted);margin:0 0 8px}
+.chart svg{width:100%;height:auto;display:block}
+.chart svg text{font-family:var(--mono);font-size:12px;fill:var(--muted)}
+.chart svg .val{fill:var(--ink)}
+pre{margin:0;background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto;font-family:var(--mono);font-size:13px;line-height:1.55;color:var(--ink)}
+.kw{color:var(--accent);font-weight:500}
+.cm{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12.5px;padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--hot-soft);border-radius:10px;padding:12px 16px;font-size:15px}
+.note strong{color:var(--hot);white-space:nowrap}
+
+/* Projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.proj h3{font-size:18px;font-weight:600}
+.proj .meta{white-space:normal}
+.proj p{margin:0;color:var(--muted);font-size:16px}
+.proj ul{margin:0;padding-left:20px;font-size:15.5px}
+.proj .foot{margin-top:auto;padding-top:6px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;font-size:15px;font-weight:600;text-decoration:none;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:6px 14px}
+.btn:hover{background:var(--accent-soft)}
+.status{font-family:var(--mono);font-size:12px;color:var(--hot);background:var(--hot-soft);padding:3px 9px;border-radius:999px}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px}
+.skills h3{font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;font-family:var(--mono)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:15px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.chip.new{border-color:var(--accent);color:var(--accent)}
+.timeline{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
+.row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:14px 20px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row div{display:flex;flex-direction:column;gap:2px}
+.row b{font-weight:600}
+.row span:not(.meta){color:var(--muted);font-size:15.5px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media (max-width:520px){.case{padding:20px}.wrap{gap:52px;padding-block:36px 32px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Buenos Aires, Argentina</p>
+    <h1>Facundo Knight</h1>
+    <p class="roles">Analista de Datos Jr. · Data Science · UX Design</p>
+    <p class="lead">Exploro el punto donde los datos y la experiencia del usuario se encuentran. Analizo, diseño y comunico soluciones que combinan lógica y empatía para generar impacto en las decisiones y en las personas.</p>
+    <div class="contact">
+      <span class="pill"><span id="mail">fakuknight@gmail.com</span><button class="copy" id="copyMail" type="button">Copiar</button></span>
+      <a class="pill" href="https://www.linkedin.com/in/facundo-knight-0b505a2ba/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <section aria-labelledby="exp">
+    <div class="sec-head">
+      <p class="eyebrow">Experiencia</p>
+      <h2 id="exp">Análisis de ventas con datos reales</h2>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <div>
+          <h3>Analista de Datos (freelance)</h3>
+          <p class="case-org">E-commerce de productos para mascotas con red de revendedores · Buenos Aires</p>
+        </div>
+        <span class="meta">Sep 2026 · Proyecto puntual</span>
+      </div>
+
+      <div class="block">
+        <h4>El desafío</h4>
+        <p>El dueño quería entender su negocio con datos: cuánto vende cada revendedor, cuánto tardan en arrancar, si los clientes vuelven a comprar, cómo cambia el ticket según el canal y qué marcas dejan más margen.</p>
+      </div>
+
+      <div class="block">
+        <h4>Qué hice</h4>
+        <ul class="clean">
+          <li>Restauré una copia de la base de producción (PostgreSQL, ~100 tablas) y exploré el modelo de datos para encontrar las tablas de ventas, vendedores y productos.</li>
+          <li>Definí las métricas antes de calcular: qué cuenta como venta, cómo separar ventas directas de las de revendedores y cómo identificar a un mismo cliente.</li>
+          <li>Respondí cada pregunta con SQL: CTEs, funciones de ventana (<code>LAG</code>, <code>ROW_NUMBER</code>, <code>SUM() OVER</code>), medianas y lectura de productos guardados en JSON.</li>
+          <li>Sumé preguntas propias que el dueño no había hecho y presenté todo en una presentación con un gráfico y una acción concreta por hallazgo.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h4>Qué encontré</h4>
+        <div class="stats">
+          <div class="stat hot"><b>38%</b><span>de las ventas de la red lo hacen solo 2 revendedores</span></div>
+          <div class="stat"><b>5 días</b><span>tarda en vender el revendedor típico (mediana); casi todos venden en su primer mes</span></div>
+          <div class="stat"><b>1 de 4</b><span>clientes intenta comprar y nunca completa el pedido</span></div>
+          <div class="stat hot"><b>30%</b><span>del margen bruto se va en el envío que paga la empresa</span></div>
+        </div>
+        <p style="color:var(--muted);font-size:16px">Además, la marca que más se vende tiene un margen unas 6 veces menor que la más rentable.</p>
+      </div>
+
+      <div class="chart" role="img" aria-label="Porcentaje de las ventas de la red por revendedor, top 10. Revendedor 1: 19,9%. Revendedor 2: 18,4%. Revendedor 3: 5,9%. Revendedor 4: 4,9%. Revendedores 5 y 6: 3,8%. Revendedor 7: 3,6%. Revendedores 8 y 9: 3,2%. Revendedor 10: 2,7%.">
+        <p class="chart-title">Qué parte de las ventas de la red hace cada revendedor (top 10)</p>
+        <svg id="bars" viewBox="0 0 640 300" preserveAspectRatio="xMinYMin meet"></svg>
+      </div>
+
+      <div class="block">
+        <h4>Un ejemplo de la consulta</h4>
+<pre><span class="cm">-- % de las ventas de la red que hace cada revendedor</span>
+<span class="kw">SELECT</span> vendedor,
+       <span class="kw">ROUND</span>(100 * <span class="kw">SUM</span>(subtotal)
+             / <span class="kw">SUM</span>(<span class="kw">SUM</span>(subtotal)) <span class="kw">OVER</span> (), 1) <span class="kw">AS</span> pct_del_total
+<span class="kw">FROM</span>   v_pedidos
+<span class="kw">WHERE</span>  valida <span class="kw">AND</span> segmento = 'Vendedores'
+<span class="kw">GROUP BY</span> vendedor
+<span class="kw">ORDER BY</span> pct_del_total <span class="kw">DESC</span>;</pre>
+      </div>
+
+      <div class="tags">
+        <span class="tag">PostgreSQL</span><span class="tag">SQL avanzado</span><span class="tag">pgAdmin</span><span class="tag">Definición de métricas</span><span class="tag">Data storytelling</span><span class="tag">PowerPoint</span>
+      </div>
+
+      <div class="note"><strong>Confidencial</strong><span>Proyecto con datos reales de una empresa. Por confidencialidad, el nombre de la empresa, de los revendedores y de las marcas no se muestran, y solo se publican porcentajes, sin montos.</span></div>
+    </article>
+  </section>
+
+  <section aria-labelledby="proj">
+    <div class="sec-head">
+      <p class="eyebrow">Proyectos</p>
+      <h2 id="proj">Proyectos destacados</h2>
+    </div>
+    <div class="grid">
+      <article class="proj">
+        <span class="meta">Power BI · 2024</span>
+        <h3>Impulso del Automovilismo Argentino</h3>
+        <p>Dashboard interactivo que analiza un dataset global de más de 5.000 pilotos para identificar tendencias y diseñar programas de formación en Argentina.</p>
+        <ul><li>Modelo relacional y medidas DAX documentadas</li><li>Mockup en PowerPoint y capturas del tablero</li><li>Hipótesis y hallazgos para stakeholders</li></ul>
+        <div class="foot"><a class="btn" href="https://drive.google.com/drive/folders/19kaVxFmPP8yEdM8QVc8y5oFRwnrjjsms?usp=sharing" target="_blank" rel="noopener">Ver tablero ↗</a></div>
+      </article>
+      <article class="proj">
+        <span class="meta">Python · 2023</span>
+        <h3>Titanic: ciencia de datos desde cero</h3>
+        <p>Pipeline de EDA, features y clasificación, desde un modelo base hasta uno mejorado, con métricas y gráficos interpretables.</p>
+        <ul><li>Notebook reproducible y limpio</li><li>Matriz de confusión y validación</li><li>Gráficos en matplotlib y explicación técnica</li></ul>
+        <div class="foot"><a class="btn" href="https://colab.research.google.com/drive/1KncU2HpXl_4Sz7IgdqeQmbdyCRDhoISj?usp=sharing" target="_blank" rel="noopener">Ver notebook ↗</a></div>
+      </article>
+      <article class="proj">
+        <span class="meta">Python · 2025</span>
+        <h3>¿El mejor piloto de la historia de la F1?</h3>
+        <p>Sistema de puntuación propio para temporadas 1950–1980: puntos por campeonato, mejor piloto del año y multiplicadores por nivel de auto y rivalidad.</p>
+        <ul><li>Dataset histórico estructurado</li><li>Funciones para cálculo y ranking</li><li>Visualizaciones y conclusiones</li></ul>
+        <div class="foot"><span class="status">En desarrollo</span></div>
+      </article>
+      <article class="proj">
+        <span class="meta">Figma · 2026</span>
+        <h3>Proyecto UX (Google UX Design)</h3>
+        <p>Proyecto del programa Google UX Design. En esta etapa me enfoco en definir el problema y en los primeros bocetos.</p>
+        <ul><li>Exploración de usuarios y necesidades</li><li>Primeras ideas y wireframes</li><li>Iteración y testing en progreso</li></ul>
+        <div class="foot"><a class="btn" href="https://www.coursera.org/professional-certificates/google-ux-design" target="_blank" rel="noopener">Ver programa ↗</a><span class="status">En desarrollo</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="edu">
+    <div class="sec-head">
+      <p class="eyebrow">Formación</p>
+      <h2 id="edu">Educación y certificaciones</h2>
+    </div>
+    <div class="timeline">
+      <div class="row"><div><b>Licenciatura en Inteligencia Artificial y Ciencia de Datos</b><span>UADE, Buenos Aires</span></div><span class="meta">2026 – Presente</span></div>
+      <div class="row"><div><b>Google UX Design Professional Certificate</b><span>Coursera</span></div><span class="meta">Ago 2025 – Nov 2025</span></div>
+      <div class="row"><div><b>Data Analytics (certificado)</b><span>Coderhouse · SQL, Excel, Power BI, comunicación de resultados</span></div><span class="meta">Nov 2023 – Ago 2024</span></div>
+      <div class="row"><div><b>Data Science (certificado)</b><span>Coderhouse · Python, estadística, Machine Learning</span></div><span class="meta">Jun 2023 – Dic 2023</span></div>
+      <div class="row"><div><b>Bachillerato bilingüe</b><span>Midlands College, Quilmes · Humanidades y Ciencias Sociales</span></div><span class="meta">2017</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills">
+    <div class="sec-head">
+      <p class="eyebrow">Habilidades</p>
+      <h2 id="skills">Con qué trabajo</h2>
+    </div>
+    <div class="skills">
+      <div><h3>Lenguajes</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">DAX</span><span class="chip">JavaScript (básico)</span></div></div>
+      <div><h3>Bases y herramientas</h3><div class="chips"><span class="chip new">PostgreSQL</span><span class="chip new">pgAdmin</span><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Excel</span><span class="chip">Git</span><span class="chip">Google Colab</span><span class="chip">BigQuery</span><span class="chip">Figma</span><span class="chip">Canva</span></div></div>
+      <div><h3>Librerías</h3><div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">scikit-learn</span></div></div>
+      <div><h3>Data y UX</h3><div class="chips"><span class="chip">ETL</span><span class="chip">Modelado de datos</span><span class="chip">EDA</span><span class="chip new">Definición de métricas</span><span class="chip">Storytelling</span><span class="chip">User Research</span><span class="chip">Prototipado</span><span class="chip">Testing</span></div></div>
+      <div><h3>IA generativa</h3><div class="chips"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">ChatGPT</span><span class="chip">AI Studio</span></div></div>
+      <div><h3>Idiomas</h3><div class="chips"><span class="chip">Español nativo</span><span class="chip">Inglés bilingüe</span></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Facundo Knight</span>
+    <span>fakuknight@gmail.com</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var data=[19.9,18.4,5.9,4.9,3.8,3.8,3.6,3.2,3.2,2.7];
+  var svg=document.getElementById('bars'), ns='http://www.w3.org/2000/svg';
+  var left=110, right=60, top=6, rowH=28, barH=18, W=640, max=20;
+  var scale=(W-left-right)/max;
+  data.forEach(function(v,i){
+    var y=top+i*rowH;
+    var lab=document.createElementNS(ns,'text');
+    lab.setAttribute('x',left-10); lab.setAttribute('y',y+barH/2+4); lab.setAttribute('text-anchor','end');
+    lab.textContent='Revendedor '+(i+1); svg.appendChild(lab);
+    var r=document.createElementNS(ns,'rect');
+    r.setAttribute('x',left); r.setAttribute('y',y); r.setAttribute('height',barH);
+    r.setAttribute('width',Math.max(2,v*scale)); r.setAttribute('rx',3);
+    r.setAttribute('style','fill:'+(i<2?'var(--hot)':'var(--bar)')); svg.appendChild(r);
+    var t=document.createElementNS(ns,'text');
+    t.setAttribute('x',left+v*scale+8); t.setAttribute('y',y+barH/2+4); t.setAttribute('class','val');
+    t.textContent=String(v).replace('.',',')+'%'; svg.appendChild(t);
+  });
+  var b=document.getElementById('copyMail');
+  b.addEventListener('click',function(){
+    var txt=document.getElementById('mail').textContent;
+    var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar';},1500);};
+    try{
+      navigator.clipboard.writeText(txt).then(done,function(){sel();});
+    }catch(e){sel();}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  });
+})();
+</script>
+</body>
+</html>
